@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शाश्वत सत्य - हर्षल पाटिल और कैक्टन द्वारा | शाश्वत ज्ञान</title>
+    <meta name="description"
+        content="Explore the divine knowledge of ancient Hindu scriptures. Bhagavad Gita, Puranas, Garga Samhita, Mahabharata, and Garuda Purana. Timeless truths for the modern world.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Noto+Serif+Devanagari:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Background Decor -->
+        <div class="bg-overlay"></div>
+
+        <!-- Sticky Header -->
+        <header class="main-header">
+            <div class="container header-content">
+                <div class="logo-group">
+                    <h1>SHASHWAT SATYA</h1>
+                    <p class="subtitle" id="ui-subtitle">हर्षल पाटिल और कैक्टन द्वारा</p>
+                </div>
+                <div class="lang-switcher">
+                    <button onclick="app.toggleLanguage()" id="lang-toggle-btn" class="lang-btn">
+                        <span>Switch to English</span>
+                        <i data-lucide="languages"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Library View -->
+        <main id="library-view" class="view-container">
+            <!-- Hero Section -->
+            <section class="hero-banner">
+                <div class="hero-bg"></div>
+                <div class="container">
+                    <div class="hero-content animate-fade">
+                        <h2 id="ui-hero-title" style="font-family: var(--font-heading);">आधुनिक आत्मा के लिए शाश्वत सत्य</h2>
+                        <p id="ui-hero-desc">प्राचीन हिंदू धर्मग्रंथों के दिव्य ज्ञान का अन्वेषण करें और आंतरिक शांति और ज्ञान का मार्ग खोजें।</p>
+                        <div style="width: 80px; height: 3px; background: var(--primary-saffron); margin-bottom: 40px;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Book Grid -->
+            <section class="container">
+                <div class="library-grid" id="books-container">
+                    <!-- Bhagavad Gita -->
+                    <div class="book-card animate-fade" id="book-card-gita" onclick="app.openBook('gita')" style="animation-delay: 0.1s">
+                        <div class="book-image">
+                            <span class="book-badge">700 Shlokas</span>
+                            <img src="media/gita.png" alt="Bhagavad Gita">
+                        </div>
+                        <div class="book-info">
+                            <h3>भगवद्गीता</h3>
+                            <p>कुरुक्षेत्र के युद्धक्षेत्र में भगवान कृष्ण और अर्जुन के बीच ईश्वरीय संवाद।</p>
+                            <button class="read-btn">पढ़ना शुरू करें <i data-lucide="book-open"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Bhagavata Purana -->
+                    <div class="book-card animate-fade" id="book-card-bhagavata" onclick="app.openBook('bhagavata')"
+                        style="animation-delay: 0.2s">
+                        <div class="book-image">
+                            <span class="book-badge">Vishnu Avatars</span>
+                            <img src="media/bhagavata.png" alt="Bhagavata Purana">
+                        </div>
+                        <div class="book-info">
+                            <h3>श्रीमद्भागवत पुराण</h3>
+                            <p>भगवान विष्णु के अवतारों की शाश्वत कथाएँ और कृष्ण का दिव्य जीवन।</p>
+                            <button class="read-btn">अवतारों की खोज करें <i data-lucide="sparkles"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Garga Samhita -->
+                    <div class="book-card animate-fade" id="book-card-garga" onclick="app.openBook('garga')" style="animation-delay: 0.3s">
+                        <div class="book-image">
+                            <span class="book-badge">Krishna Leelas</span>
+                            <img src="media/garga.png" alt="Garga Samhita">
+                        </div>
+                        <div class="book-info">
+                            <h3>गर्ग संहिता</h3>
+                            <p>कृष्ण के बचपन, दिव्य लीलाओं और वृंदावन की कथाओं का विस्तृत विवरण।</p>
+                            <button class="read-btn">लीलाओं का अन्वेषण करें <i data-lucide="heart"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Mahabharata -->
+                    <div class="book-card animate-fade" id="book-card-mahabharata" onclick="app.openBook('mahabharata')"
+                        style="animation-delay: 0.4s">
+                        <div class="book-image">
+                            <span class="book-badge">The Great Epic</span>
+                            <img src="media/mahabharata.png" alt="Mahabharata">
+                        </div>
+                        <div class="book-info">
+                            <h3>महाभारत</h3>
+                            <p>धर्म का महाकाव्य, कुरुक्षेत्र युद्ध और भारत वंश का इतिहास।</p>
+                            <button class="read-btn">महाकाव्य पढ़ें <i data-lucide="swords"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Garuda Purana -->
+                    <div class="book-card animate-fade" id="book-card-garuda" onclick="app.openBook('garuda')" style="animation-delay: 0.5s">
+                        <div class="book-image">
+                            <span class="book-badge">Afterlife</span>
+                            <img src="media/garuda.png" alt="Garuda Purana">
+                        </div>
+                        <div class="book-info">
+                            <h3>गरुड़ पुराण</h3>
+                            <p>मृत्यु के बाद का जीवन, मोक्ष और जीवात्मा की यात्रा का गहन ज्ञान।</p>
+                            <button class="read-btn">आत्मा की यात्रा <i data-lucide="sun"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Reader View -->
+        <main id="reader-view" class="view-container hidden">
+            <div class="reader-header">
+                <div class="container header-controls">
+                    <button class="back-btn" onclick="app.closeBook()">
+                        <i data-lucide="arrow-left"></i> Library
+                    </button>
+                    <h2 id="current-book-title"
+                        style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 1.8rem;">Book
+                        Title</h2>
+                    <div style="width: 100px;"></div> <!-- Spacer -->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="content-layout">
+                    <!-- TOC Sidebar -->
+                    <aside class="toc-sidebar">
+                        <h3>Chapters</h3>
+                        <ul id="toc-list" class="toc-list">
+                            <!-- Injected by JS -->
+                        </ul>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <article class="content-body" id="content-container">
+                        <h2 id="chapter-title"
+                            style="margin-bottom: 50px; border-bottom: 2px solid var(--primary-saffron); display: inline-block; font-family: var(--font-heading); padding-bottom: 10px;">
+                            Chapter Title</h2>
+                        <div id="verses-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-logo">
+                    <h2 style="font-family: var(--font-heading);">SHASHWAT SATYA</h2>
+                    <p style="color: var(--text-dim); letter-spacing: 4px; font-size: 0.8rem;" id="ui-footer-subtitle">हर्षल पाटिल और कैक्टन द्वारा</p>
+                </div>
+                <div class="footer-nav" id="ui-footer-nav">
+                    <a href="#" onclick="app.closeBook()">मुख्य पृष्ठ</a>
+                    <a href="#">ज्ञान</a>
+                    <a href="#">कैक्टन के बारे में</a>
+                    <a href="#">ग्रंथ</a>
+                </div>
+                <p class="copyright" id="ui-copyright">&copy; 2026 शाश्वत सत्य - हर्षल पाटिल द्वारा। शाश्वत सत्य को समर्पित।</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // GSAP Initialization
+        gsap.from(".logo-group", {
+            duration: 1.5,
+            y: -50,
+            opacity: 0,
+            ease: "expo.out"
+        });
+
+        gsap.from(".hero-content h2", {
+            duration: 2,
+            x: -100,
+            opacity: 0,
+            delay: 0.5,
+            ease: "power4.out"
+        });
+
+        gsap.from(".hero-content p", {
+            duration: 2,
+            x: -50,
+            opacity: 0,
+            delay: 0.8,
+            ease: "power4.out"
+        });
+    </script>
+</body>
+
+</html>

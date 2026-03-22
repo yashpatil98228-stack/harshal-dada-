@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शाश्वत सत्य - कैक्टन द्वारा</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;600&family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="light-mode">
+    <div id="app">
+        <div class="background-overlay"></div>
+        <header class="main-header">
+            <div class="logo-container">
+                <i data-lucide="sparkles" class="logo-icon"></i>
+                <h1>शाश्वत सत्य</h1>
+                <p class="subtitle">कैक्टन द्वारा</p>
+            </div>
+            <nav class="top-nav">
+                <button id="home-btn" class="nav-btn active"><i data-lucide="home"></i> मुख्य पृष्ठ</button>
+                <div class="theme-toggle" id="theme-toggle">
+                    <i data-lucide="moon" id="theme-icon"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main id="library-view" class="view-container">
+            <section class="hero">
+                <h2>आधुनिक समय के लिए प्राचीन ज्ञान</h2>
+                <p>भारत के पवित्र ग्रंथों के माध्यम से ब्रह्मांड और आत्मा के शाश्वत सत्य का अन्वेषण करें।</p>
+            </section>
+
+            <div class="library-grid">
+                <div class="book-card" id="card-garud" onclick="openBook('garud')">
+                    <div class="book-cover garud-cover">
+                        <div class="spine"></div>
+                        <div class="cover-content">
+                            <i data-lucide="scroll-text" class="cover-icon"></i>
+                            <h3>गरुड़ पुराण</h3>
+                            <span class="author">आत्मा का मार्ग</span>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <p>मृत्यु के बाद की यात्रा, स्वर्ग और नरक के लोकों और मोक्ष की अवधारणा के बारे में जानें।</p>
+                        <button class="read-btn">यात्रा शुरू करें</button>
+                    </div>
+                </div>
+
+                <div class="book-card" id="card-gita" onclick="openBook('gita')">
+                    <div class="book-cover gita-cover">
+                        <div class="spine"></div>
+                        <div class="cover-content">
+                            <i data-lucide="book-open" class="cover-icon"></i>
+                            <h3>भगवद गीता</h3>
+                            <span class="author">ईश्वर का गीत</span>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <p>कुरुक्षेत्र के युद्ध के मैदान में श्री कृष्ण द्वारा दी गई दिव्य शिक्षाओं के 700 श्लोक।</p>
+                        <button class="read-btn">पढ़ना शुरू करें</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <main id="reading-view" class="view-container hidden">
+            <div class="book-interface">
+                <aside class="book-sidebar">
+                    <button class="back-btn" onclick="showLibrary()"><i data-lucide="chevron-left"></i> मुख्य पृष्ठ</button>
+                    <h2 id="sidebar-title">पुस्तक शीर्षक</h2>
+                    <ul id="chapter-list"></ul>
+                </aside>
+                <article class="book-content">
+                    <div class="content-header">
+                        <h2 id="content-title">अध्याय शीर्षक</h2>
+                        <div class="content-controls">
+                            <button id="prev-chapter" title="पिछला"><i data-lucide="arrow-left"></i></button>
+                            <button id="next-chapter" title="अगला"><i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div id="content-body" class="content-body"></div>
+                </article>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 शाश्वत सत्य - कैक्टन द्वारा। सभी आध्यात्मिक मार्ग एक ही सत्य की ओर ले जाते हैं।</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
