@@ -225,7 +225,7 @@ const app = {
                 p.style.lineHeight = "2";
                 p.style.color = "var(--text-main)";
                 p.style.fontWeight = "300";
-                p.innerText = item.text;
+                p.innerHTML = item.text;
                 this.versesList.appendChild(p);
             } else if (item.image) {
                 const img = document.createElement('img');
