@@ -6,6 +6,7 @@ const app = {
 
     init() {
         console.log("Shashwat Satya | Ready");
+        console.log("Available Books:", Object.keys(BOOK_DATA));
         this.cacheDOM();
         this.bindEvents();
         this.updateUI();
@@ -115,8 +116,12 @@ const app = {
     },
 
     openBook(bookId) {
+        console.log("Opening Book:", bookId);
+        if (!BOOK_DATA[bookId]) {
+            console.error("Book data not found for id:", bookId);
+            return;
+        }
         this.currentBook = BOOK_DATA[bookId];
-        if (!this.currentBook) return;
 
         const tl = gsap.timeline();
         
